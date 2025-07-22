@@ -1,0 +1,1 @@
+docker run --name postgres-keycloak -e POSTGRES_DB=keycloak -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=admin -p 5432:5432 -d postgres:13
