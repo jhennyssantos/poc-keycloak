@@ -57,8 +57,7 @@ services:
     command: start-dev
     volumes:
       - ./quarkus.properties:/opt/keycloak/conf/quarkus.properties
-      - /opt/keycloak/certs:/certs:ro
-      - ./data:/opt/keycloak/data
+      - ./certs/live:/certs
     networks:
       - keycloak-net
 
