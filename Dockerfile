@@ -20,5 +20,5 @@ ENV KC_DB=postgres
 ENV KC_DB_URL=jdbc:postgresql://postgres:5432/keycloak
 ENV KC_DB_USERNAME=admin
 ENV KC_DB_PASSWORD=admin
-ENV KC_HOSTNAME=localhost
+ENV KC_HOSTNAME=ec2-54-166-209-120.compute-1.amazonaws.com
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh", "start-dev"]

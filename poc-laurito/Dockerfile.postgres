@@ -1,7 +1,0 @@
-# Usando a imagem base oficial do PostgreSQL
-FROM postgres:15
-
-# Customizações ou configurações adicionais (opcional)
-ENV POSTGRES_USER=keycloak
-ENV POSTGRES_PASSWORD=password
-ENV POSTGRES_DB=keycloak

@@ -26,7 +26,7 @@ services:
     networks:
       - keycloak-net
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      test: ["CMD", "curl", "-f", "http://ec2-54-166-209-120.compute-1.amazonaws.com:3000/health"]
       interval: 30s
       timeout: 10s
       retries: 3

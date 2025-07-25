@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script para testar o servidor SCIM mock
-BASE_URL="http://localhost:8081"
+BASE_URL="http://ec2-54-166-209-120.compute-1.amazonaws.com:8081"
 TOKEN="secret-token"
 
 echo "=== Testando Servidor SCIM Mock ==="
