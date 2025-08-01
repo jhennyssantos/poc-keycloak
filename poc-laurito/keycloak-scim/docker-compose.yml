@@ -26,7 +26,7 @@ services:
       bash -c "sleep 10 &&
                psql -h postgres -U keycloak -d keycloak -f /alter-table.sql"
     networks:
-      - keycloak_net
+      - keycloak-net
 
   # Servidor SCIM Mock simples usando Node.js
   scim-server-mock:
