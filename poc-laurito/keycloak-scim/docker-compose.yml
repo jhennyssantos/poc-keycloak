@@ -9,6 +9,8 @@ services:
       POSTGRES_PASSWORD: password
     ports:
       - "5432:5432"
+    volumes:
+    - pgdata:/var/lib/postgresql/data
     networks:
       - keycloak-net
 
@@ -52,6 +54,7 @@ services:
       KC_DB_PASSWORD: password
       KC_FEATURES: preview
       KC_SPI_THEME_WELCOME_THEME: "scim"
+      KC_HTTP_ENABLED: true
       KC_HTTPS_CERTIFICATE_FILE: /certs/fullchain.pem
       KC_HTTPS_CERTIFICATE_KEY_FILE: /certs/privkey.pem
       KC_SPI_REALM_RESTAPI_EXTENSION_SCIM_LICENSE_KEY: "eyJhbGciOiJFUzUxMiJ9.eyJpc3MiOiJwYXNjYWwga251ZXBwZWwiLCJzdWIiOiIxNDY3IiwiYXVkIjoiMTQ2NyIsImV4cCI6MTc1NDUyNDgwMH0.ARxfWgot5tDthp1PLl1ts9VyoyUQhYGjJmToITOEC-Hx92KSctB9iby88NJYl74PC-CiK9gn17RKoR2msCL1ANHYAIsZIOSHLjBHKIEi_JcPINrgtbhx-QFYT2kxnHVGrnvKEnEyQuHQoLF_seLle3eaGPR2fH1q41jV9mDJv3Xve2Sn"
@@ -59,9 +62,14 @@ services:
     volumes:
       - ./quarkus.properties:/opt/keycloak/conf/quarkus.properties
       - ./certs/live:/certs
+      - keycloak_data:/opt/keycloak/data
     networks:
       - keycloak-net
 
 networks:
   keycloak-net:
     driver: bridge
+
+volumes:
+  pgdata:
+  keycloak_data:
