@@ -3,6 +3,7 @@ FROM quay.io/keycloak/keycloak:26.2.5
 
 # 2. Copie o arquivo .jar do plugin para a pasta de providers dentro do container
 COPY providers/scim-for-keycloak-kc-26.2-3.5.0-free.jar /opt/keycloak/providers/
+COPY providers/phasetwo-admin-portal-0.40.jar /opt/keycloak/providers/
 
 # 3. Execute o comando de build do Keycloak para que ele "instale" o plugin
 RUN /opt/keycloak/bin/kc.sh build
